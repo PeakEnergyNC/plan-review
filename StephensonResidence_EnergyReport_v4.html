@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy-Efficiency Plan Review — Stephenson Residence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── Reset & base ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    color: #333333;
+    background: #f0f4f8;
+    line-height: 1.65;
+  }
+  a { color: #003876; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ─── Page shell ─── */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 24px rgba(0,0,0,.12);
+  }
+
+  /* ─── Cover ─── */
+  .cover {
+    background: #003876;
+    color: #fff;
+    padding: 56px 60px 48px;
+  }
+  .cover-eyebrow {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #f5c06a;
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .cover h1 span { display: block; font-size: 1.25rem; color: #f5c06a; margin-top: 6px; }
+  .cover-meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .cover-meta dt {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #f5c06a;
+    margin-bottom: 3px;
+  }
+  .cover-meta dd {
+    font-size: .95rem;
+  }
+  .cover-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .8rem;
+    color: #f5c06a;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: #f0f4f8;
+    padding: 32px 60px;
+    border-bottom: 2px solid #d0d9e4;
+  }
+  .toc h2 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #555555;
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 48px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: .88rem;
+    padding: 3px 0;
+  }
+  .toc-item a { color: #003876; font-weight: 600; }
+  .toc-num {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .75rem;
+    color: #e1962f;
+    min-width: 22px;
+  }
+
+  /* ─── Body layout ─── */
+  .body-content {
+    padding: 0 60px 60px;
+  }
+
+  /* ─── Section headings ─── */
+  .section {
+    margin-top: 48px;
+  }
+  .section-label {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #e1962f;
+    margin-bottom: 4px;
+  }
+  .section > h2 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #003876;
+    border-bottom: 2px solid #d0d9e4;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    color: #003876;
+    margin: 24px 0 8px;
+  }
+  h4 {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .95rem;
+    color: #003876;
+    margin: 18px 0 6px;
+  }
+  p { margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ─── Item cards (L1-A, L1-B…) ─── */
+  .item-card {
+    border-left: 4px solid #003876;
+    padding: 18px 20px;
+    margin: 20px 0;
+    background: #f7f9fb;
+    border-radius: 0 4px 4px 0;
+  }
+  .item-card.priority {
+    border-left-color: #c0392b;
+    background: #fdf5f5;
+  }
+  .item-card.l2 { border-left-color: #2980b9; }
+  .item-card.l3 { border-left-color: #8e44ad; }
+  .item-card h3 { margin-top: 0; }
+  .program-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .badge {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+  }
+  .badge.hero { color: #b06e14; border-color: #b06e14; background: #fdf6e3; }
+  .badge.estar { color: #1a7a3c; border-color: #1a7a3c; background: #edf7f0; }
+  .badge.doe { color: #8e44ad; border-color: #8e44ad; background: #f5edf9; }
+
+  /* ─── Callout / note box ─── */
+  .callout {
+    background: #fffbec;
+    border: 1px solid #e8d87a;
+    border-left: 4px solid #d4ac0d;
+    border-radius: 0 4px 4px 0;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: .88rem;
+    font-style: italic;
+    color: #5a4a00;
+  }
+  .callout.warning {
+    background: #fdf5f5;
+    border-color: #e8b4b4;
+    border-left-color: #c0392b;
+    color: #6e1a1a;
+  }
+  .callout.info {
+    background: #edf4fb;
+    border-color: #a8c8e8;
+    border-left-color: #003876;
+    color: #002a58;
+  }
+  .callout p { margin-bottom: 6px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ─── Alert banner ─── */
+  .alert-banner {
+    background: #c0392b;
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .88rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+
+  /* ─── Option boxes ─── */
+  .option-box {
+    border: 1px solid #d0d9e4;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 10px 0;
+    background: #fff;
+  }
+  .option-box h4 { margin-top: 0; }
+
+  /* ─── Tables ─── */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .85rem;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  }
+  th {
+    background: #003876;
+    color: #fff;
+    text-align: left;
+    padding: 9px 12px;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .78rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #d0d9e4;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f5f8fb; }
+  tr:hover td { background: #edf4fb; }
+  td.label { font-weight: 700; color: #003876; white-space: nowrap; }
+  td.pass { color: #1a7a3c; font-weight: 700; }
+  td.warn { color: #c0392b; font-weight: 700; }
+  td.check { color: #1a7a3c; font-size: 1.1rem; }
+
+  /* ─── Bullet lists ─── */
+  ul, ol {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  li { margin-bottom: 6px; }
+  li:last-child { margin-bottom: 0; }
+
+  /* ─── References ─── */
+  .ref-list {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f0f4f8;
+    border-radius: 3px;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-size: .82rem;
+  }
+  .ref-list p {
+    margin-bottom: 4px;
+    color: #555555;
+  }
+  .ref-list p:last-child { margin-bottom: 0; }
+
+  /* ─── Section divider ─── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid #d0d9e4;
+    margin: 36px 0 0;
+  }
+
+  /* ─── Appendix label ─── */
+  .appendix-label {
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: .7rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #e1962f;
+    margin-bottom: 4px;
+  }
+
+  /* ─── Codes reference header table ─── */
+  .codes-table th { font-size: .75rem; }
+
+  /* ─── Compliance table ─── */
+  .compliance-table th { font-size: .74rem; white-space: nowrap; }
+  .compliance-table td { font-size: .82rem; word-break: keep-all; overflow-wrap: normal; hyphens: none; }
+
+  /* ─── Top scrollbar for wide tables ─── */
+  .scroll-top-bar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: -1px;
+  }
+  .scroll-top-bar-inner {
+    height: 1px;
+  }
+
+  /* ─── Status pills ─── */
+  .pill-pass {
+    display: inline-block;
+    background: #d4f0e0;
+    color: #0f5c2a;
+    border-radius: 12px;
+    padding: 1px 9px;
+    font-size: .75rem;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  .pill-warn {
+    display: inline-block;
+    background: #fde8e8;
+    color: #8b1a1a;
+    border-radius: 12px;
+    padding: 1px 9px;
+    font-size: .75rem;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  .pill-tbd {
+    display: inline-block;
+    background: #fdf6e3;
+    color: #7a5c00;
+    border-radius: 12px;
+    padding: 1px 9px;
+    font-size: .75rem;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  /* ─── "What you're getting right" checks ─── */
+  .right-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d0d9e4;
+  }
+  .right-item:last-child { border-bottom: none; }
+  .right-check {
+    font-size: 1.3rem;
+    color: #1a7a3c;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .right-body h3 { margin-top: 0; font-size: .98rem; }
+  .right-body p { font-size: .9rem; margin-bottom: 0; }
+
+  /* ─── Print ─── */
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .page-wrap { box-shadow: none; }
+    .cover { padding: 40px 40px 32px; }
+    .body-content { padding: 0 40px 40px; }
+    .toc { padding: 24px 40px; }
+    .item-card, .callout, .option-box { break-inside: avoid; }
+    .section { break-before: auto; }
+    a[href]::after { content: none; }
+  }
+
+  @media (max-width: 700px) {
+    .cover, .body-content, .toc { padding-left: 24px; padding-right: 24px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .cover-meta { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ══════════════════════════════════ COVER ══════════════════════════════════ -->
+<header class="cover">
+  <p class="cover-eyebrow">Peak Energy, Inc. &nbsp;·&nbsp; Energy-Efficiency Plan Review</p>
+  <h1>Stephenson Residence<span>3182 Stephenson Road, Angier, NC</span></h1>
+  <dl class="cover-meta">
+    <div><dt>Climate Zone</dt><dd>3A &nbsp;(Harnett County, NC)</dd></div>
+    <div><dt>Project Type</dt><dd>NC Residential New Construction</dd></div>
+    <div><dt>Review Date</dt><dd>April 2026</dd></div>
+    <div><dt>Operative Code</dt><dd>2018 NCECC</dd></div>
+  </dl>
+  <div class="cover-footer">
+    <span>Prepared by Peak Energy, Inc. &nbsp;·&nbsp; peakenergync.com &nbsp;·&nbsp; (919) 567-5329</span>
+    <span>Confidential — For builder use</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════ TOC ══════════════════════════════════ -->
+<nav class="toc">
+  <h2>Contents</h2>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-num">§</span><a href="#codes">Codes &amp; Standards Referenced</a></div>
+    <div class="toc-item"><span class="toc-num">1</span><a href="#summary">Plan Summary</a></div>
+    <div class="toc-item"><span class="toc-num">2</span><a href="#right">What You're Getting Right</a></div>
+    <div class="toc-item"><span class="toc-num">3</span><a href="#priority">Priority Issue: Second-Floor HVAC in Vented Attic</a></div>
+    <div class="toc-item"><span class="toc-num">4</span><a href="#l1">Level 1 — Low Cost, Easiest</a></div>
+    <div class="toc-item"><span class="toc-num">5</span><a href="#l2">Level 2 — Medium Cost, Strong ROI</a></div>
+    <div class="toc-item"><span class="toc-num">6</span><a href="#l3">Level 3 — Higher Investment, Highest Performance</a></div>
+    <div class="toc-item"><span class="toc-num">7</span><a href="#garage">Garage Planning Notes</a></div>
+    <div class="toc-item"><span class="toc-num">8</span><a href="#windows">Window Performance</a></div>
+    <div class="toc-item"><span class="toc-num">9</span><a href="#mechanical">Mechanical Systems Summary</a></div>
+    <div class="toc-item"><span class="toc-num">10</span><a href="#confirm">Items to Confirm Before Construction</a></div>
+    <div class="toc-item"><span class="toc-num">11</span><a href="#standards">Performance Standards Reference</a></div>
+    <div class="toc-item"><span class="toc-num">A</span><a href="#appendix-a">Appendix A: NC Code &amp; Above-Code Comparison Table</a></div>
+    <div class="toc-item"><span class="toc-num">B</span><a href="#appendix-b">Appendix B: ENERGY STAR Checklists Overview</a></div>
+    <div class="toc-item"><span class="toc-num">C</span><a href="#appendix-c">Appendix C: Advanced Framing Reference Resources</a></div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════ BODY ══════════════════════════════════ -->
+<main class="body-content">
+
+<!-- ─── Codes & Standards ─── -->
+<section class="section" id="codes">
+  <p class="section-label">Reference Codes</p>
+  <h2>Codes &amp; Standards Referenced</h2>
+  <p>This review is conducted in accordance with the following governing documents. The 2018 NCECC is the operative energy code in North Carolina as of April 2026. The above-code programs listed below (HERO, ENERGY STAR, DOE Efficient New Homes) are used as performance benchmarks and reference standards throughout this report. This builder is not pursuing formal certification under these programs; however, the standards they define represent proven best practices for energy efficiency, durability, and occupant comfort, and are strongly recommended regardless of certification.</p>
+  <div class="table-wrap">
+    <table class="codes-table">
+      <thead>
+        <tr><th>Document</th><th>Title / Source</th><th>Application in This Review</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">2018 NCRC / ICC</td>
+          <td>2018 NC Residential Code (ICC NCRC2018P3)</td>
+          <td>Building envelope, structural, and fire separation requirements</td>
+        </tr>
+        <tr>
+          <td class="label">2018 NCECC / ICC</td>
+          <td>2018 NC Energy Conservation Code (NCECC 2018) — operative energy code as of April 2026; Appendix R4 = Duke Energy HERO criteria (NCECC2018P2)</td>
+          <td>All energy code minimums, HERO above-code criteria, duct leakage requirements</td>
+        </tr>
+        <tr>
+          <td class="label">DOE ENH V2 Rev.3</td>
+          <td>DOE Efficient New Homes V2 Rev.3 (issued 9/15/2025; updated 3/16/2026)</td>
+          <td>Above-code: duct location, HVAC efficiency, water heater, IAQ, EV-ready, PV-ready</td>
+        </tr>
+        <tr>
+          <td class="label">ENERGY STAR v3.2/3.3</td>
+          <td>ENERGY STAR Single-Family New Homes v3.2 (current national spec); v3.3 finalized but will only become required as states adopt 2024 IECC or equivalent — earliest mandatory dates no sooner than 2027–2028 depending on jurisdiction</td>
+          <td>Thermal bypass checklist, HVAC commissioning, window certification, lighting, DOE ENH prerequisite</td>
+        </tr>
+        <tr>
+          <td class="label">ANSI/RESNET/ICC 301</td>
+          <td>Standard for Energy Rating Index — defines insulation installation quality grades (Grade I, II, III)</td>
+          <td>Insulation installation quality; advanced framing and Grade I installation standards</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ref-list">
+    <p><em>ICC source:</em> <a href="https://codes.iccsafe.org/content/NCECC2018P2" target="_blank">2018 NCECC (NCECC2018P2)</a> · <a href="https://codes.iccsafe.org/content/NCECC2018/appendix-r4-additional-voluntary-criteria-for-increasing-energy-efficiency-high-efficiency-residential-option-" target="_blank">Appendix R4 — HERO</a> · <a href="https://codes.iccsafe.org/content/NCRC2018P3" target="_blank">2018 NCRC (NCRC2018P3)</a></p>
+  </div>
+</section>
+
+<!-- ─── 1. Plan Summary ─── -->
+<section class="section" id="summary">
+  <p class="section-label">Section 1</p>
+  <h2>Plan Summary</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Item</th><th>As Shown on Plans</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Project Address</td><td>3182 Stephenson Road, Harnett County, NC</td></tr>
+        <tr><td class="label">Conditioned Floor Area</td><td>2,118 SF (house) + 999 SF conditioned garage</td></tr>
+        <tr><td class="label">Foundation</td><td>Crawl space (CMU masonry walls with CMU piers)</td></tr>
+        <tr><td class="label">Exterior Walls</td><td>2×6 studs @ 16″ O.C. — both floors (meets HERO 2×6 requirement)</td></tr>
+        <tr><td class="label">Roof / Attic</td><td>Stick-framed, 2×8 common rafters @ 16″ O.C. — vented attic</td></tr>
+        <tr><td class="label">Ceiling Heights</td><td>9′-0″ first floor / 8′-0″ second floor</td></tr>
+        <tr><td class="label">HVAC — First Floor</td><td>Innovair GT4, 2-Ton, 17.5 SEER (~16.6 SEER2), HSPF 9.00 (~7.65 HSPF2) — ducted inverter heat pump, in sealed crawl space</td></tr>
+        <tr><td class="label">HVAC — Second Floor</td><td><span class="warn">⚠</span> Innovair [model TBD], 1.5-Ton, 18.8 SEER (~17.9 SEER2), HSPF 9.10 (~7.74 HSPF2) — ducted inverter heat pump, <strong>IN VENTED ATTIC</strong></td></tr>
+        <tr><td class="label">Ventilation</td><td>Panasonic FV-10VEC2 ERV, stand-alone system</td></tr>
+        <tr><td class="label">Bath Exhaust Fans</td><td>Panasonic humidity-sensing auto on/off: 1× 100 CFM + 3× 80 CFM</td></tr>
+        <tr><td class="label">Water Heater</td><td>Bosch TR7000-T 80-gallon nominal (74-gal actual) heat pump water heater, UEF 4.0, ENERGY STAR certified</td></tr>
+        <tr><td class="label">Windows</td><td>Andersen 100 Series, Dual Pane Low-E SmartSun, Argon Fill</td></tr>
+        <tr><td class="label">Garage</td><td>4″ poured concrete slab on grade w/ 6-mil vapor barrier; walls and ceiling planned for insulation</td></tr>
+        <tr><td class="label">Drawings Reviewed</td><td>Architectural Plans 1-21-26, Structural Engineering 2-5-26, Andersen Window Quote 2-5-26</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ─── 2. What You're Getting Right ─── -->
+<section class="section" id="right">
+  <p class="section-label">Section 2</p>
+  <h2>What You're Getting Right</h2>
+  <p>This project includes several above-code choices that put it well ahead of typical Harnett County new construction homes. These items do not need to change.</p>
+
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>2×6 exterior wall framing (both floors)</h3>
+      <p>Meeting the Duke Energy HERO requirement for 2×6 walls eliminates the most common framing deficiency in new construction in this area. This creates the cavity depth needed for R-21 fill and positions the home for HERO enrollment.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>High-performance windows throughout</h3>
+      <p>Based on published spec-sheet values, all Andersen 100 Series windows appear to meet or exceed HERO and DOE Efficient New Homes performance thresholds for U-factor and SHGC. The SmartSun Low-E coating achieves SHGC of 0.19–0.22, well below the 0.25 limit required by NC Code and DOE programs. Note: the Andersen spec sheet does not list ENERGY STAR certification for these specific products — confirm status directly with Andersen. See Section 8 — Window Performance for the full NFRC data table.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>Heat pump water heater (Bosch TR7000-T, UEF 4.0)</h3>
+      <p>The Bosch TR7000-T is ENERGY STAR certified with a confirmed UEF of 4.0 — substantially above the DOE Efficient New Homes threshold of 2.57. Selecting a HPWH over a conventional electric or gas unit is the right call for energy efficiency and program compliance.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>First-floor HVAC and ducts in sealed crawl space</h3>
+      <p>Placing the first-floor air handler and ductwork inside the sealed crawl space — within the thermal and air barrier boundary — eliminates duct penalty losses for the first floor. This aligns with HERO, ENERGY STAR, and DOE requirements.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>Panasonic ERV system</h3>
+      <p>An energy recovery ventilator provides controlled mechanical ventilation as required by ASHRAE 62.2, while recovering heat and moisture from exhaust air. This is the correct approach for a tight, well-insulated home.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>Humidity-sensing bath exhaust fans</h3>
+      <p>Panasonic humidity-sensing fans automatically activate when moisture is detected, improving indoor air quality without relying on occupant habits. These fans are ENERGY STAR certified.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>6-mil vapor barrier under garage slab</h3>
+      <p>Vapor barrier under the garage slab is a solid baseline. Section 7 recommends upgrading to 10-mil reinforced vapor barrier with sealed seams, appropriate for a conditioned garage environment.</p>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="right-check">✓</div>
+    <div class="right-body">
+      <h3>ENERGY STAR-rated HVAC equipment</h3>
+      <p>Both Innovair ducted heat pump systems are ENERGY STAR certified. Estimated SEER2 values (16.6 and 17.9) exceed the DOE Efficient New Homes target of 15.2 SEER2. Estimated HSPF2 values (7.65 and 7.74, using the correct ducted split system conversion factor) fall below the DOE ENH target of 7.8 HSPF2. Confirm actual HSPF2 from Innovair AHRI product data sheets to verify whether the units meet the DOE ENH heating efficiency benchmark.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 3. Priority Issue ─── -->
+<section class="section" id="priority">
+  <p class="section-label">Section 3</p>
+  <h2>Priority Issue: Second-Floor HVAC in Vented Attic</h2>
+  <div class="alert-banner">⚠ HIGHEST IMPACT ITEM ON THIS PROJECT</div>
+
+  <p>Based on the plans, the second-floor air handler, equipment, and all associated ductwork are located in the vented attic above the second-floor ceiling. In Climate Zone 3A, this is the single largest driver of comfort problems, high energy bills, and humidity issues in new construction.</p>
+
+  <p>In this climate zone, attic temperatures reach 130–150°F in summer. Duct systems in that environment lose 15–25% of heating and cooling capacity before conditioned air reaches occupied space. The effect is not marginal — it is the reason homeowners with otherwise well-built homes report rooms that will not cool down in August, humidity problems on upper floors, and HVAC systems that run continuously.</p>
+
+  <p>DOE Efficient New Homes V2 Rev.3 (issued 9/15/2025; updated 3/16/2026) requires all heating and cooling ducts and air handlers to be located within the thermal and air barrier boundary. With the second-floor system in the vented attic, this home does not currently meet that benchmark. Addressing this is strongly recommended for comfort, efficiency, and long-term performance regardless of whether certification is pursued.</p>
+
+  <h3>Options to Move the Second-Floor System Inside the Thermal Boundary</h3>
+
+  <div class="option-box">
+    <h4>Option A — Conditioned attic (spray foam at roof deck)</h4>
+    <p>Apply closed-cell spray foam to the underside of the roof sheathing and gable walls to achieve approximately R-30. Closed-cell delivers R-6 to R-7 per inch — R-30 requires approximately 4.5–5 inches. Open-cell spray foam (R-3.5/inch) would require approximately 9–10 inches for the same R-value and is not recommended for this roof deck application. This approach converts the attic from vented to conditioned space, enclosing the existing HVAC equipment and ductwork within the thermal boundary without relocating them — often the lowest-disruption path when the system is already roughed in. The ridge/soffit vents are eliminated.</p>
+    <div class="callout">
+      <p><strong>Spray foam quality note:</strong> Spray foam is highly sensitive to installation quality. Incorrect mixing ratios, substrate temperature below manufacturer specification, or insufficient application thickness produce foam that fails to cure properly — with actual R-values far below the nominal rating. Require a contractor with documented residential roof deck experience and commercial-grade equipment. Conduct an on-site quality review during the application day. Verify target thickness using depth-check pins before the foam is covered. Do not accept visual inspection of foam color or texture as the sole quality indicator.</p>
+    </div>
+  </div>
+
+  <div class="option-box">
+    <h4>Option B — Interior duct chase from second floor</h4>
+    <p>Frame interior duct chases on the second floor and route ductwork through conditioned space through interior soffits or dropped ceilings. The air handler remains in the attic in a partially encapsulated mechanical space. More complex to execute after framing, but achievable.</p>
+  </div>
+
+  <div class="option-box">
+    <h4>Option C — Relocate air handler to conditioned second-floor closet</h4>
+    <p>Move the second-floor ducted air handler into a conditioned mechanical closet within the second-floor footprint with short duct runs entirely in conditioned space. Requires coordination with floor plan and structural openings. Cleanest long-term solution.</p>
+  </div>
+
+  <div class="ref-list">
+    <p><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></p>
+    <p><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation — Ducts in Conditioned Space</a></p>
+  </div>
+</section>
+
+<!-- ─── 4. Level 1 ─── -->
+<section class="section" id="l1">
+  <p class="section-label">Section 4</p>
+  <h2>Level 1 — Low Cost, Easiest</h2>
+  <p>These items cost little or nothing beyond standard labor and materials. Most are completed during rough-in and framing. Several are prerequisites for HERO, ENERGY STAR, and DOE program enrollment.</p>
+
+  <div class="item-card" id="l1a">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L1-A &nbsp; Air Sealing at All Penetrations</h3>
+    <p>Continuous canned foam at every wire, pipe, and duct penetration through top and bottom plates on both floors. Acoustical sealant at the sheathing-to-framing interface and at rim/band joist areas. Weatherstripping at all exterior doors and the attic access door.</p>
+    <p>NC Code requires ≤ 5.0 ACH50. HERO (2018 NCECC, Appendix R4 — voluntary above-code option) requires ≤ 4.0 ACH50 or 0.24 CFM50/SFSA. Appendix R4 explicitly prohibits the visual inspection option — blower door testing is mandatory for HERO compliance. A construction target of 3 ACH50 or better is ideal — this provides margin against HERO's 4.0 threshold and positions the home for DOE Efficient New Homes enrollment.</p>
+    <div class="callout info">
+      <p><strong>DOE Efficient New Homes ACH50 target:</strong> If DOE Efficient New Homes compliance is the goal, the program requires 2.25 ACH50 or lower for Climate Zone 3 (detached single-family). The HERO construction target of 3.0 ACH50 does not meet this threshold. Target 2.0 ACH50 as the construction benchmark — this provides margin against the 2.25 requirement and is achievable with thorough, systematic air sealing at framing, rough-in, and trim stages.</p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/energysaver/air-sealing-your-home" target="_blank">DOE — Air Sealing Your Home</a></p>
+      <p><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation (air sealing resources)</a></p>
+    </div>
+  </div>
+
+  <div class="item-card" id="l1b">
+    <div class="program-badges">
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L1-B &nbsp; Insulated and Gasketed Attic Access</h3>
+    <p>Plans show an attic and HVAC access door on the second floor. This access point must be insulated and gasketed to the same standard as the rest of the attic floor. An uninsulated attic hatch is equivalent to a hole in the ceiling — ENERGY STAR flags this item specifically on the Thermal Bypass Inspection Checklist.</p>
+    <p>Minimum approach: rigid foam board adhered to the back of the hatch panel (R-15 or better) with a foam or EPDM perimeter gasket. For this project's hinged access door, a rigid foam cover with compression gasket is sufficient.</p>
+    <div class="ref-list">
+      <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR — New Homes Partner Resources (checklists)</a></p>
+    </div>
+  </div>
+
+  <div class="item-card" id="l1c">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+    </div>
+    <h3>L1-C &nbsp; Duct Sealing with Mastic and Duct Insulation</h3>
+    <p>All duct joints, seams, and boot connections sealed with duct mastic or UL-listed foil tape (not cloth duct tape). This applies to both the first-floor crawl space system and the second-floor attic system. Mastic is more durable than tape over the system's life.</p>
+    <p>NC Code requires duct leakage to outside at or below 4 CFM25/100 SF conditioned floor area. HERO (Appendix R4) requires ≤ 3 CFM25/100 SF to outside. The practical target for this project is as close to zero measurable duct leakage as achievable — properly mastic-sealed ductwork with all boots fully bedded at the drywall plane routinely tests at 1–2 CFM25/100 SF or lower.</p>
+    <div class="callout info">
+      <p><strong>Duct insulation — 2018 NCECC NC amendment:</strong> The 2018 NCECC (as amended for NC) requires that supply and return ducts located in unconditioned space — including the second-floor vented attic — be insulated to a minimum of R-8. Supply ducts in semi-conditioned spaces require R-4. Duct sealing alone is not sufficient for code compliance on the second-floor system; the ducts must also be insulated to R-8 for as long as they remain in the vented attic.</p>
+    </div>
+  </div>
+
+  <div class="item-card" id="l1d">
+    <div class="program-badges">
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L1-D &nbsp; Airtight Recessed Lighting</h3>
+    <p>Any recessed can lights installed in ceilings below the unconditioned attic must be IC-rated and airtight-rated (ICAT). Recessed cans that are not airtight create direct air pathways between conditioned space and the attic and are among the most common air leakage failures at blower door testing.</p>
+  </div>
+
+  <div class="item-card" id="l1e">
+    <div class="program-badges"></div>
+    <h3>L1-E &nbsp; Radiant Barrier in Vented Attic</h3>
+    <div class="callout warning">
+      <p><strong>Vented attic only.</strong> A radiant barrier is appropriate only for vented attic assemblies. Do not install a radiant barrier if Option A (conditioned attic via closed-cell spray foam at the roof deck) is selected — the insulated roof deck assembly replaces the function of a radiant barrier, and applying one in a conditioned attic provides no meaningful benefit. A radiant barrier is not appropriate for spray foam or unvented attic assemblies.</p>
+    </div>
+    <p>Because the second-floor HVAC and ductwork are currently in the vented attic, a radiant barrier on the underside of the roof sheathing will reduce attic temperatures and improve equipment performance until the duct location issue is resolved. DOE research shows radiant barriers can reduce cooling energy by 5–10% in homes with ductwork in vented attics in the Southeast.</p>
+    <p>If the vented attic configuration is retained, install the radiant barrier during framing before sheathing is placed, or as a foil-faced product applied to the underside of the sheathing at the same time as the duct installation. If the attic is later converted to conditioned space under Option A, the radiant barrier is not needed and should not be installed over the spray foam.</p>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/energysaver/radiant-barriers" target="_blank">DOE — Radiant Barriers</a></p>
+    </div>
+  </div>
+
+  <div class="item-card" id="l1f">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L1-F &nbsp; Recommended Performance Targets</h3>
+    <p>Documenting performance targets early creates a shared benchmark for the builder, subcontractors, and any third-party testing. Recommended targets for this project:</p>
+    <ul>
+      <li>Envelope air leakage: 2.0 ACH50 or lower (NC Code: ≤ 5.0 ACH50; HERO: ≤ 4.0 ACH50; DOE Efficient New Homes: ≤ 2.25 ACH50 for CZ3; 2.0 ACH50 provides margin for DOE ENH)</li>
+      <li>Duct leakage to outside: 3 CFM25/100 SF conditioned floor area or lower (NC Code limit is 4 CFM25/100 SF)</li>
+      <li>Duct leakage total: 4 CFM25/100 SF conditioned floor area or lower</li>
+    </ul>
+  </div>
+
+  <div class="item-card" id="l1g">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L1-G &nbsp; Smart / Programmable Thermostat</h3>
+    <p>HERO requires a programmable or Wi-Fi-enabled thermostat for each HVAC zone. DOE Efficient New Homes specifies a programmable thermostat in the target home specifications. Confirm that the Innovair units' control systems meet this requirement. If the units ship with a standard on/off thermostat, a compatible Wi-Fi-enabled thermostat should be specified for each zone.</p>
+  </div>
+
+  <div class="item-card" id="l1h">
+    <div class="program-badges">
+      <span class="badge estar">☑ ENERGY STAR</span>
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L1-H &nbsp; 100% LED Lighting</h3>
+    <p>ENERGY STAR Certified Homes v3.2 and DOE Efficient New Homes both require 100% LED lighting. Specify LED fixtures in all locations on the lighting schedule. This is a straightforward spec choice at no meaningful cost premium over standard construction.</p>
+  </div>
+</section>
+
+<!-- ─── 5. Level 2 ─── -->
+<section class="section" id="l2">
+  <p class="section-label">Section 5</p>
+  <h2>Level 2 — Medium Cost, Strong ROI</h2>
+  <p>These items require additional investment but deliver measurable performance gains. Most qualify for HERO, ENERGY STAR, or DOE program credit and will have a meaningful impact on occupant comfort, energy bills, and resale value.</p>
+
+  <div class="item-card l2" id="l2a">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L2-A &nbsp; Advanced Framing Techniques (Optimum Value Engineering)</h3>
+    <p>Structural drawings show 2×6 studs at 16″ O.C. on both floors. Advanced framing (also called Optimum Value Engineering or OVE framing) reduces thermal bridging at corners, headers, and partition intersections — locations where studs interrupt the insulation plane.</p>
+    <div class="callout">
+      <p><strong>Program note:</strong> Advanced framing techniques are no longer required under ENERGY STAR Section 3 as a mandatory checklist item. However, ENERGY STAR continues to highly recommend them as a best practice for thermal performance, and the ENERGY STAR Thermal Bypass Inspection Checklist still requires that identified bridging locations be properly addressed. ANSI/RESNET/ICC 301 establishes insulation installation quality grades (Grade I, II, III) — advanced framing directly supports Grade I installation by ensuring full cavity fill with no voids at corners, headers, and intersections. All references in this section reflect ENERGY STAR recommendations and ICC 301 best practice, not mandatory requirements.</p>
+    </div>
+    <h4>What this means for this project:</h4>
+    <ul>
+      <li><strong>Studs at 24″ O.C. instead of 16″ O.C. (primary recommendation)</strong> — Reduces the framing factor from approximately 25% to approximately 15%, increasing the insulated wall area. Uses 5–10% less lumber by board-feet. Fully compatible with 2×6 framing at this wall height. Confirm with structural engineer against load requirements for this project.</li>
+      <li><strong>Two-stud corners with drywall clips</strong> — Standard framing uses three or four studs at corners, creating solid wood where insulation should go. Two-stud corners (California corners) with drywall clips provide the same structural performance with continuous insulation in the corner cavity.</li>
+      <li><strong>Insulated headers</strong> — Headers over windows and doors in exterior walls are typically solid dimensional lumber, which is fully thermally bridged. In 2×6 walls with lower structural loads, right-sized headers with rigid foam insulation on the interior face maintain structural performance while eliminating the solid-wood thermal bridge. For this project, cut ½-inch rigid foam board sections and insert them into the header cavity alongside batt insulation before drywall is installed.</li>
+      <li><strong>Single top plates (where code and loads permit)</strong> — Reduces the amount of solid wood at the top of the wall, where top plate bridging occurs across multiple stud bays.</li>
+      <li><strong>Ladder blocking at partition wall intersections</strong> — Interior partition walls meeting exterior walls typically use a dedicated stud for drywall nailer. Ladder blocking achieves the same drywall backing with significantly less solid wood, eliminating a thermal bridge location.</li>
+    </ul>
+    <p>The ENERGY STAR Thermal Bypass Inspection Checklist, completed at pre-drywall by a qualified third-party inspector, requires that identified bridging locations be properly addressed. Advanced framing techniques are the most effective way to resolve corner, header, and partition intersection items on that checklist. Even where studs remain at 16″ O.C., insulated headers and two-stud corners eliminate the highest-impact thermal bridges and directly support Grade I insulation installation per ANSI/RESNET/ICC 301.</p>
+    <div class="callout">
+      <p><em>If 16″ O.C. framing is already set based on structural requirements or builder preference, the insulated header and two-stud corner techniques still apply at those specific locations without changing the overall stud spacing.</em></p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/energysaver/advanced-house-framing" target="_blank">DOE — Advanced House Framing (OVE)</a></p>
+      <p><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation — Advanced Framing (search 'BSI-030')</a></p>
+      <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR — New Homes Partner Resources and Thermal Bypass Checklist</a></p>
+      <p><a href="https://www.resnet.us/about/standards/ansi-resnet-icc-301/" target="_blank">ANSI/RESNET/ICC 301 — Standard for Energy Rating Index Ratings</a></p>
+    </div>
+  </div>
+
+  <div class="item-card l2" id="l2b">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L2-B &nbsp; Wall Insulation — R-21 High-Density Fill</h3>
+    <p>Plans confirm 2×6 framing on both floors. NC Code Minimum for CZ 3A: R-15 cavity, or R-13 + R-2.5 continuous insulation (ci), per Table N1102.1.2 (R402.1.2), 2018 NC Energy Conservation Code. HERO and ENERGY STAR target R-21 high-density batts or dense-pack cellulose — both achieve full cavity fill with better thermal performance than standard R-19 at the same framing depth.</p>
+    <h4>Rim and band joist (full house):</h4>
+    <p>Apply open-cell spray foam to the full length of the rim/band joist on both floors — including the garage-adjacent rim joists. Open-cell foam fully encapsulates the joist bay, seals all penetrations through the sill plate and band, and handles the irregular geometry at the floor perimeter better than cut-and-cobble rigid foam. Minimum 3–4 inches of open-cell to achieve R-12 or better at the rim. This is one of the highest air-leakage locations in the building envelope and is critical for both HERO and ENERGY STAR Thermal Bypass compliance.</p>
+    <h4>Exterior walls behind tubs and showers:</h4>
+    <p>Any exterior wall cavity behind a tub or shower unit must be insulated and air sealed before the unit is installed. Once the tub or shower pan is set, this cavity is inaccessible. Install R-21 batt or open-cell spray foam in these cavities and seal all penetrations before the plumbing fixtures are positioned. This is an ENERGY STAR Thermal Bypass checklist item and a common inspection failure.</p>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/energysaver/insulation" target="_blank">DOE — Wall Insulation</a></p>
+    </div>
+  </div>
+
+  <div class="item-card l2" id="l2c">
+    <div class="program-badges">
+      <span class="badge estar">☑ ENERGY STAR</span>
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L2-C &nbsp; Attic Insulation — R-49 Blown Cellulose or Fiberglass</h3>
+    <p>NC Code allows R-38 for CZ 3A. ENERGY STAR thermal envelope performance is verified against the ENERGY STAR Reference Home Design — a reference model built to 2021 IECC prescriptive values — rather than requiring specific prescriptive R-values. DOE Efficient New Homes independently requires that the rated home's total thermal envelope UA meet or fall below the 2021 IECC prescriptive UA. In practice, R-49 blown cellulose or fiberglass on the attic floor is the most common and straightforward way to meet both programs' Reference Home UA thresholds for CZ3A. With stick-framed 2×8 rafters at 16″ O.C., this home does not have raised-heel (energy) trusses that would allow full insulation depth to extend over the exterior wall top plates at the eaves.</p>
+    <p>At minimum, install R-49 blown cellulose or fiberglass in the field of the attic. At the eave areas where rafter depth limits insulation thickness, use a high-density insulation dam board or rigid foam overlay. The attic access door area must be addressed separately per L1-B.</p>
+    <h4>Raised-heel trusses or rafter heels:</h4>
+    <p>This roof should be framed with raised-heel trusses (also called energy trusses). The current plan shows stick-framed 2×8 common rafters at 16″ O.C., which limits insulation depth at the eave to roughly 3–4 inches — effectively R-10 or less directly above the exterior wall, the highest heat-loss location in the attic floor. Raised-heel trusses add height at the outside wall top plate, allowing full-depth insulation to extend uninterrupted from the center of the attic all the way to the eave. Specify a minimum 10–11 inch clear heel height to allow full R-38 to R-49 depth at the exterior wall line. The structural engineer needs to spec and approve the raised-heel truss design, including heel height, bearing details, and any lateral bracing changes.</p>
+    <p>This applies regardless of insulation method. If Option A (conditioned attic via spray foam at roof deck) is selected for the duct location issue, the roof deck becomes the insulation plane — but spray foam still needs full depth at the eave to maintain a continuous thermal boundary. Without a raised heel, there is not enough clearance at the eave to achieve 10–11 inches of spray foam where the roof deck meets the top plate. A raised heel provides the space needed for both blown insulation on the attic floor (standard vented attic) and spray foam at the roof deck (conditioned attic).</p>
+    <h4>Soffit ventilation baffles (vented attic):</h4>
+    <p>If the attic remains vented, proper ventilation baffles (also called rafter vents or insulation baffles) must be installed at every soffit vent bay before insulation is blown. The baffles maintain a clear air channel from the soffit to the ridge, but they must be positioned so that full-depth insulation can still extend all the way to the top of the exterior wall. If the baffles are installed too low or too flat against the roof sheathing, they push the insulation away from the eave and leave the top plate area underinsulated — defeating the purpose of the raised heel. Install baffles tight to the underside of the roof sheathing, running from the soffit opening up past the top plate, with the bottom edge of the baffle sitting at or above the top of the exterior wall so blown insulation fills completely beneath it to full depth.</p>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/energysaver/insulation" target="_blank">DOE — Attic Insulation</a></p>
+    </div>
+  </div>
+
+  <div class="item-card l2" id="l2d">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+    </div>
+    <h3>L2-D &nbsp; Crawl Space Encapsulation</h3>
+    <p>Plans show a crawl space foundation with CMU masonry walls and CMU piers. Builder confirms the first-floor HVAC and ductwork are in the sealed crawl space, which requires the crawl to function as conditioned or semi-conditioned space. HERO requires a fully encapsulated crawl space.</p>
+    <p>For a sealed crawl space with HVAC inside, the minimum assembly is:</p>
+    <ul>
+      <li>Foundation vent openings sealed (no passive vents to exterior)</li>
+      <li>12–20 mil reinforced vapor barrier on exposed ground, lapped up foundation walls minimum 6 inches and taped at seams</li>
+      <li>Vapor barrier mechanically fastened and taped to foundation walls</li>
+      <li>CMU piers sealed at base with vapor barrier lapping up sides</li>
+      <li>Rim joist insulation and air sealing (closed-cell foam or rigid foam with foam sealant)</li>
+      <li>Conditioned air supply or stand-alone dehumidifier to manage humidity in the crawl space envelope</li>
+    </ul>
+    <p>Summer humidity in this area is 70–90% RH from May through September. A vented crawl in this climate draws in more moisture than it removes.</p>
+    <h4>Foundation wall insulation:</h4>
+    <p>For a sealed crawl space, insulating the CMU foundation walls reduces heat transfer and keeps the crawl environment closer to indoor conditions year-round. Recommended approach:</p>
+    <ul>
+      <li><strong>Primary recommendation:</strong> R-10 foil-faced rigid polyisocyanurate or XPS board mechanically fastened to the interior face of the CMU walls, seams taped with foil tape. Foil-faced board provides a clean, durable interior finish and is easier for inspectors and future service personnel to assess. Bring the board down to the vapor barrier and seal at the base.</li>
+      <li><strong>Alternative:</strong> 2–3 inches of closed-cell spray foam applied directly to the CMU wall face. Spray foam conforms to the masonry surface and bonds directly — no fasteners required. More expensive per R-value than rigid board but provides a seamless air and vapor barrier in a single application.</li>
+    </ul>
+    <div class="callout">
+      <p>Either approach is acceptable. The foil-faced rigid board option is generally preferred for CMU crawl walls because it is neater, easier to inspect, and produces a finished appearance. Confirm that the selected product meets any local fire-rating requirements for exposed foam insulation in the crawl space.</p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://www.advancedenergy.org" target="_blank">Advanced Energy — Closed Crawl Space Research</a></p>
+      <p><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation — Crawl Spaces</a></p>
+    </div>
+  </div>
+
+  <div class="item-card l2" id="l2e">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L2-E &nbsp; Windows — Performance Confirmed; ENERGY STAR Certification Not Listed on Spec Sheet</h3>
+    <p>Based on published NFRC values, Andersen 100 Series windows with Dual Pane Low-E SmartSun glass and argon fill appear to meet or exceed performance thresholds for HERO, ENERGY STAR, and DOE Efficient New Homes. See Section 8 — Window Performance for the full NFRC data table.</p>
+    <div class="callout">
+      <p>The Andersen window spec sheet for this project does not list ENERGY STAR certification for these products. Based on the U-factor and SHGC performance values (U 0.26–0.27, SHGC 0.19–0.22), these windows should qualify for ENERGY STAR certification in Climate Zone 3A — the performance thresholds are U ≤ 0.30 and SHGC ≤ 0.25. Confirm ENERGY STAR certification status directly with Andersen and verify via the NFRC label on each delivered unit.</p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://www.energystar.gov/productfinder/product/certified-windows/" target="_blank">ENERGY STAR — Certified Windows, Doors &amp; Skylights</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 6. Level 3 ─── -->
+<section class="section" id="l3">
+  <p class="section-label">Section 6</p>
+  <h2>Level 3 — Higher Investment, Highest Performance</h2>
+  <p>These items require more significant investment but are prerequisites for DOE Efficient New Homes certification and represent the current standard of practice for high-performance residential construction in Climate Zone 3A.</p>
+
+  <div class="item-card l3" id="l3a">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L3-A &nbsp; Second-Floor Duct System: Move Inside Thermal Boundary</h3>
+    <p>As described in Section 3, moving the second-floor HVAC system and ductwork inside the conditioned envelope is the single highest-impact change available on this project. This item is required for DOE Efficient New Homes certification. Refer to Section 3 for the three implementation options. Coordinate this decision early — before sheathing if possible — to avoid costly changes later in the build.</p>
+    <div class="ref-list">
+      <p><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></p>
+    </div>
+  </div>
+
+  <div class="item-card l3" id="l3b">
+    <div class="program-badges">
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L3-B &nbsp; Heat Pump Water Heater — Space and Circuit Requirements</h3>
+    <p>This project already specifies the Bosch TR7000-T, which has a confirmed UEF of 4.0 — well above the DOE threshold of 2.57. Note that the unit is nominally listed as 80-gallon but the actual storage capacity is 74 gallons, which is standard for heat pump water heaters where the heat pump assembly occupies space within the cabinet. DOE requires: (1) an individual branch circuit (240V/30A) within 3 feet of the water heater location, and (2) a minimum 3 ft × 3 ft × 7 ft clear space within 3 feet of the unit. Confirm during rough-in that the mechanical room provides the required clear volume and that the circuit is appropriately sized. An 80-gallon HPWH generates condensate — ensure the mechanical room has a condensate drain.</p>
+  </div>
+
+  <div class="item-card l3" id="l3c">
+    <div class="program-badges">
+      <span class="badge doe">☑ DOE</span>
+    </div>
+    <h3>L3-C &nbsp; EPA Indoor airPLUS — Indoor Air Quality Reference</h3>
+    <p>EPA Indoor airPLUS is a national program that defines best practices for indoor air quality in new homes. While this builder is not pursuing Indoor airPLUS certification, the program provides a useful reference for IAQ decisions on this project. The current version structure is:</p>
+    <ul>
+      <li>Indoor airPLUS Version 1, Revision 04: applies to homes permitted on or before December 31, 2026</li>
+      <li>Indoor airPLUS Version 2: applies to homes permitted on or after January 1, 2027; adds more comprehensive moisture management, filtration, and combustion safety requirements</li>
+    </ul>
+    <p>Key Indoor airPLUS practices relevant to this project, recommended regardless of certification: radon rough-in (passive sub-slab depressurization), MERV 8 or higher filtration on the HVAC systems, and combustion safety testing where applicable.</p>
+    <div class="callout info">
+      <p>The DOE ENH program requirements document was updated on March 16, 2026. Always confirm Indoor airPLUS version requirements against the current DOE policy record, as these are updated on a rolling basis.</p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://www.epa.gov/indoorairplus/indoor-airplus-program-documents" target="_blank">EPA Indoor airPLUS Program Documents</a></p>
+      <p><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></p>
+    </div>
+  </div>
+</section>
+
+  <div class="item-card l3" id="l3d">
+    <div class="program-badges">
+      <span class="badge hero">☑ HERO</span>
+      <span class="badge estar">☑ ENERGY STAR</span>
+    </div>
+    <h3>L3-D &nbsp; Exterior Continuous Insulation — R-5 Rigid Foam Board (Optional Upgrade)</h3>
+    <p>The 2018 NC Energy Conservation Code (Table N1102.1.2) recognizes exterior continuous insulation (ci) as an alternative or supplement to cavity insulation. For 2×6 walls in Climate Zone 3A, the code-minimum approach with continuous insulation is R-13 cavity + R-2.5 ci. Adding exterior rigid foam board improves the effective whole-wall R-value by interrupting thermal bridging at studs, which account for roughly 15–25% of total wall area in standard 16″ O.C. framing. Cavity insulation alone cannot address this bridging — the foam layer must be continuous across the face of the framing.</p>
+    <p>One inch of polyisocyanurate (approximately R-6/inch) or XPS (R-5/inch) rigid foam board applied to the exterior face of the wall sheathing, beneath the cladding, delivers R-5 continuous insulation. Combined with R-21 cavity fill in 2×6 framing, this produces a meaningfully higher effective whole-wall R-value than cavity fill alone. The improvement is most significant at corners, window/door jambs, and stud-dense framing areas.</p>
+    <h4>For this project:</h4>
+    <ul>
+      <li>Apply 1-inch polyiso or XPS continuous foam board over the wall sheathing, full building perimeter</li>
+      <li>Tape all seams with manufacturer-recommended compatible tape — the taped foam layer can serve as or back the weather-resistive barrier depending on the product specified</li>
+      <li>Extend window and door bucks (jamb extensions) to account for the added wall thickness</li>
+      <li>Coordinate cladding attachment details with the framing contractor — the cladding fasteners must penetrate through the foam into the studs; use screws of appropriate length per manufacturer guidance</li>
+      <li>Where foam board is exposed above-grade, protect from UV degradation and pest intrusion with pressure-treated trim, metal flashing, or cladding lapped to grade</li>
+    </ul>
+    <div class="callout info">
+      <p>This is an optional upgrade, not a code requirement for this project. It is most cost-effective when the decision is made before sheathing is complete — adding continuous insulation after the fact requires new cladding and extended bucks throughout. At the framing stage, the incremental material cost is modest relative to the whole-wall thermal improvement.</p>
+    </div>
+    <div class="ref-list">
+      <p><a href="https://codes.iccsafe.org/content/NCECC2018P2" target="_blank">2018 NC Energy Conservation Code — Table N1102.1.2 (R402.1.2), continuous insulation alternatives</a></p>
+      <p><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation — Continuous Insulation and Thermal Bridging</a></p>
+    </div>
+  </div>
+
+<!-- ─── 7. Garage ─── -->
+<section class="section" id="garage">
+  <p class="section-label">Section 7</p>
+  <h2>Garage Planning Notes</h2>
+  <p>Plans show a 999 SF conditioned garage with a vehicle lift. Builder has asked specific questions about the garage thermal envelope. Recommendations below address those questions directly.</p>
+
+  <h3>Garage Slab — Perimeter Insulation</h3>
+  <p>Structural drawings show a 4-inch poured concrete slab on grade with 6-mil polyethylene vapor barrier. For a conditioned garage slab, upgrade to 10-mil reinforced vapor barrier sealed at all seams — 10-mil is the appropriate standard for a heated or conditioned slab environment and provides better puncture resistance during construction.</p>
+  <p><strong>Code requirement — heated vs. unheated slab:</strong> Under 2018 NCECC Table R402.1.2, slab perimeter insulation requirements depend on climate zone, slab type, and whether the slab is heated. In Climate Zone 3A, an unheated slab on grade does not trigger a perimeter insulation requirement. A heated slab (e.g., in-slab radiant) does require perimeter insulation per the same table. Regardless of code mandate, R-10 extruded polystyrene at the garage slab perimeter is strongly recommended for thermal comfort and performance, and may support above-code program targets for conditioned garage floors.</p>
+  <p>Recommended installation regardless of code mandate: R-10 extruded polystyrene (XPS) or closed-cell polyisocyanurate at the slab perimeter, extending from the top of the slab down to a minimum 2-foot depth. Protect the above-grade portion from UV degradation and pest entry with pressure-treated boards, stucco parging, or metal flashing.</p>
+  <div class="ref-list">
+    <p><a href="https://codes.iccsafe.org/content/NCECC2018P2" target="_blank">2018 NC Energy Conservation Code (NCECC)</a></p>
+  </div>
+
+  <h3>Garage Exterior Walls and Ceiling</h3>
+  <p>For a fully conditioned garage, the exterior walls and ceiling should be insulated to the same standard as the house:</p>
+  <ul>
+    <li>Exterior walls: R-21 high-density fill in 2×6 cavities with continuous air sealing at all penetrations</li>
+    <li>Ceiling / roof assembly: R-49 blown insulation on the attic floor above, or spray foam at the roof deck if no attic above</li>
+    <li>Garage door: specify an insulated door with a minimum R-12 polyurethane foam core — uninsulated steel doors are a significant thermal weak point in a conditioned garage</li>
+  </ul>
+
+  <h3>Floor Assembly Above Garage</h3>
+  <p>Where occupied living space sits directly above the garage, the floor/ceiling assembly must be fully insulated with no air gap between the insulation and the floor deck above:</p>
+  <ul>
+    <li>Blown fiberglass or cellulose to full joist cavity depth, installed with netting stapled to the bottom of the floor joists — ensures insulation fills completely against the subfloor with no convective air gap</li>
+    <li>Alternatively: open-cell spray foam applied from below to fill the entire joist cavity — achieves continuous contact with the floor deck and provides combined air sealing and insulation in one step</li>
+    <li>An air gap between the top of the insulation and the floor deck significantly reduces effective R-value through convective bypass — this is one of the most common floor insulation installation deficiencies</li>
+  </ul>
+  <div class="callout info">
+    <p>Air sealing is as important as insulation at this assembly. Seal all penetrations through the floor — electrical boxes, pipes, duct boots — with canned foam before insulation is placed. This prevents garage air (vehicle exhaust, stored chemicals) from migrating into living space.</p>
+  </div>
+
+  <h3>House-to-Garage Separation Wall</h3>
+  <p>Per 2018 NC Residential Code Table R302.6, the garage must be separated from the residence and its attic by not less than ½-inch gypsum board applied to the garage side of the common wall. Where habitable rooms occur above the garage, the garage ceiling must be protected by not less than ⅝-inch Type X gypsum board. For thermal performance, insulate the house-to-garage separation wall with R-13 or R-15 batts in 2×4 cavities, or R-21 in 2×6 cavities. Air sealing at this assembly is equally critical: seal all penetrations — electrical boxes, pipes, ducts — with canned foam before drywall is installed. This prevents garage air, including vehicle exhaust and stored chemicals, from migrating into conditioned living space through gaps in the assembly.</p>
+
+  <h3>Future Mini-Split for Garage</h3>
+  <p>Builder plans to add a mini-split to the garage in the future. During rough-in, install:</p>
+  <ul>
+    <li>240V/30A dedicated circuit at the planned head unit location</li>
+    <li>Line set penetration sleeve through the exterior wall or ceiling (insulated and sealed)</li>
+    <li>Condensate drain line rough-in at the head unit location</li>
+  </ul>
+</section>
+
+<!-- ─── 8. Windows ─── -->
+<section class="section" id="windows">
+  <p class="section-label">Section 8</p>
+  <h2>Window Performance</h2>
+  <p>All windows are Andersen 100 Series with Dual Pane Low-E SmartSun glass and argon fill. NFRC performance values are from the Andersen window quote dated February 5, 2026.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Item #</th><th>Description</th><th>Size (W×H)</th><th>Qty</th><th>U-Factor</th><th>SHGC</th><th>Glass</th><th>ENERGY STAR Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>100 (×3)</td>
+          <td>Fixed Picture</td>
+          <td>96″×60″</td>
+          <td>3</td>
+          <td>0.26</td>
+          <td>0.22</td>
+          <td>SmartSun LE</td>
+          <td>Spec sheet does not list ENERGY STAR certification. Based on U-factor (0.26) and SHGC (0.22), these windows should qualify for CZ3A. Confirm with Andersen and verify via NFRC label.</td>
+        </tr>
+        <tr>
+          <td>200–600</td>
+          <td>Casement</td>
+          <td>Various</td>
+          <td>Various</td>
+          <td>0.27</td>
+          <td>0.19</td>
+          <td>SmartSun LE</td>
+          <td>Spec sheet does not list ENERGY STAR certification. Based on U-factor (0.27) and SHGC (0.19), these windows should qualify for CZ3A. Confirm with Andersen and verify via NFRC label.</td>
+        </tr>
+        <tr>
+          <td>700</td>
+          <td>Fixed Picture</td>
+          <td>60″×48″</td>
+          <td>1</td>
+          <td>0.27</td>
+          <td>0.22</td>
+          <td>SmartSun LE</td>
+          <td>Spec sheet does not list ENERGY STAR certification. Based on U-factor (0.27) and SHGC (0.22), these windows should qualify for CZ3A. Confirm with Andersen and verify via NFRC label.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Window Performance vs. Program Thresholds</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Threshold</th><th>NC Code</th><th>HERO</th><th>ENERGY STAR CZ3</th><th>DOE ENH CZ3A</th></tr></thead>
+      <tbody>
+        <tr><td class="label">U-factor required</td><td>≤ 0.35 (CZ3A)</td><td>≤ 0.30</td><td>≤ 0.30 (CZ3)</td><td>≤ 0.30</td></tr>
+        <tr><td class="label">SHGC required</td><td>≤ 0.25</td><td>≤ 0.25</td><td>≤ 0.25 (CZ3)*</td><td>≤ 0.25</td></tr>
+        <tr><td class="label">This home (fixed, U-0.26)</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td></tr>
+        <tr><td class="label">This home (casements, U-0.27)</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td><td class="pass">✓ Passes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p>*ENERGY STAR for Climate Zone 3A (mixed-humid) requires U ≤ 0.30 and SHGC ≤ 0.25. All windows on this project (Andersen 100 Series SmartSun, SHGC 0.19–0.22) appear to meet both performance thresholds based on published spec-sheet values. However, the Andersen spec sheet does not list these products as ENERGY STAR certified. Based on the U-factor and SHGC values, they screen as likely compliant — but certification must be confirmed directly with Andersen and verified via the NFRC label on each unit.</p>
+  </div>
+</section>
+
+<!-- ─── 9. Mechanical ─── -->
+<section class="section" id="mechanical">
+  <p class="section-label">Section 9</p>
+  <h2>Mechanical Systems Summary</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>System</th><th>Specifications</th><th>Location</th><th>Program Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="label">HVAC — 1st Floor</td>
+          <td>Innovair GT4, 2-Ton, 17.5 SEER (~16.6 SEER2 est.), HSPF 9.00 (~7.65 HSPF2 est.), ENERGY STAR rated</td>
+          <td>Sealed crawl space</td>
+          <td>✓ SEER2 exceeds 15.2 target; ⚠ confirm HSPF2 ≥ 7.8 from AHRI data sheet</td>
+        </tr>
+        <tr>
+          <td class="label">HVAC — 2nd Floor</td>
+          <td>Innovair [model TBD], 1.5-Ton, 18.8 SEER (~17.9 SEER2 est.), HSPF 9.10 (~7.74 HSPF2 est.), ENERGY STAR rated</td>
+          <td><span class="warn">Vented attic ⚠</span></td>
+          <td>⚠ SEER2 exceeds 15.2 target; confirm HSPF2 ≥ 7.8; duct location fails DOE requirement</td>
+        </tr>
+        <tr>
+          <td class="label">Ventilation</td>
+          <td>Panasonic FV-10VEC2 ERV, 100 CFM, stand-alone system</td>
+          <td>TBD</td>
+          <td>Meets ASHRAE 62.2 mechanical ventilation requirement</td>
+        </tr>
+        <tr>
+          <td class="label">Bath Exhaust</td>
+          <td>Panasonic humidity-sensing: 1× 100 CFM + 3× 80 CFM</td>
+          <td>Bathrooms</td>
+          <td>✓ ENERGY STAR certified fans</td>
+        </tr>
+        <tr>
+          <td class="label">Water Heater</td>
+          <td>Bosch TR7000-T nominal 80-gal (74-gal actual storage), UEF 4.0 confirmed, ENERGY STAR certified</td>
+          <td>Mechanical room</td>
+          <td>✓ UEF 4.0 exceeds DOE ENH threshold of 2.57; ENERGY STAR certified</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p>SEER2 and HSPF2 values are estimated using approximate screening conversion factors from RESNET MINHERS Addendum 71f for ducted split systems: SEER × 0.95 ≈ SEER2 (÷ 1.053); HSPF × 0.85 ≈ HSPF2 (÷ 1.176). These are the correct factors for ducted systems — not the ductless mini-split factors sometimes cited (÷ 1.046 / ÷ 1.155). These are screening estimates only; program compliance requires AHRI-published HSPF2, not converted values. The HSPF conversion penalty is larger for ducted systems. Estimated HSPF2 values (7.65 and 7.74) fall below the DOE Efficient New Homes target of 7.8 HSPF2. Confirm actual SEER2 and HSPF2 from Innovair AHRI-certified product data sheets, as published ratings may differ from estimates.</p>
+  </div>
+  <div class="callout">
+    <p>The Bosch TR7000-T is nominally described as an 80-gallon unit. The actual storage volume is 74 gallons — standard for heat pump water heaters where the heat pump assembly occupies space within the cabinet. This is not a discrepancy; it is normal for this product class.</p>
+  </div>
+</section>
+
+<!-- ─── 10. Confirm ─── -->
+<section class="section" id="confirm">
+  <p class="section-label">Section 10</p>
+  <h2>Items to Confirm Before Construction</h2>
+  <p>The following items were not fully determinable from the drawings and correspondence provided. Confirm with the architect, engineer, manufacturer, or third-party verifier as appropriate.</p>
+  <ul>
+    <li>Innovair SEER2 and HSPF2 ratings — confirm from manufacturer product data sheet or AHRI-certified data (not converted estimates alone); see Section 9 notes on HSPF2 and the DOE ENH 7.8 HSPF2 threshold</li>
+    <li>Andersen 100 Series ENERGY STAR certification — verify via NFRC label on the specific products ordered and cross-reference against the ENERGY STAR certified window product database</li>
+    <li>Kitchen ventilation CFM (listed as TBD by builder) — DOE Indoor airPLUS has specific kitchen exhaust requirements; finalize with mechanical contractor before rough-in</li>
+    <li>Radon rough-in — confirm whether passive sub-slab depressurization system is planned (required for Indoor airPLUS V1 Rev. 04 / V2; recommended for Harnett County clay-soil areas)</li>
+    <li>HVAC filtration MERV rating — confirm MERV rating on filter housings for both Innovair systems (MERV 8 minimum for Indoor airPLUS compliance)</li>
+    <li>ERV location and duct routing — confirm the Panasonic FV-10VEC2 and its duct runs are located within conditioned space</li>
+    <li>Second-floor duct location final decision — must be resolved before construction is finalized; affects DOE ENH compliance (see Section 3)</li>
+    <li>Stud spacing feasibility at 24″ O.C. — confirm against structural load requirements with structural engineer; recommended for full advanced framing thermal benefit</li>
+  </ul>
+</section>
+
+<!-- ─── 11. Standards ─── -->
+<section class="section" id="standards">
+  <p class="section-label">Section 11</p>
+  <h2>Performance Standards Reference</h2>
+  <p>The following summarizes what each applicable code or above-code program requires for the key elements of this project. This is provided as technical reference for the builder, architect, and any third-party verifier. Requirements are stated as they appear in the governing document. The builder should verify current requirements directly with the certifying organization.</p>
+
+  <h3>Duke Energy HERO — 2018 NCECC Appendix R4</h3>
+  <p>HERO is defined entirely by 2018 NCECC Appendix R4. It is the voluntary above-code option available under the operative NC energy code. Technical requirements:</p>
+  <ul>
+    <li>Exterior walls: 2×6 minimum</li>
+    <li>Envelope air leakage: ≤ 4.0 ACH50 or 0.24 CFM50/SF surface area — blower door test required; visual inspection is explicitly prohibited by Appendix R4</li>
+    <li>Total duct leakage: ≤ 4 CFM25 per 100 SF conditioned floor area</li>
+    <li>Duct leakage to outside: ≤ 3 CFM25 per 100 SF conditioned floor area</li>
+    <li>Crawl space: fully encapsulated per Appendix R4 moisture management requirements</li>
+    <li>Lighting: ≥ 90% high-efficacy lamps (§R404.1)</li>
+    <li>Thermostat: programmable or Wi-Fi-enabled per HVAC zone</li>
+    <li>Third-party verification: Duke Energy-accredited third-party verifier required for all testing and inspection</li>
+  </ul>
+  <p>Using HERO as a performance benchmark, this project's current design meets or is positioned to meet all HERO criteria with the improvements described in this report. The critical item is duct leakage — thorough mastic sealing of all duct joints, seams, and boots is needed to reach the 3 CFM25/100 SF target.</p>
+
+  <h3>ENERGY STAR Single-Family New Homes v3.2</h3>
+  <p>ENERGY STAR v3.2 uses a Reference Home Design approach — the thermal envelope is evaluated against a reference model built to 2021 IECC prescriptive values, not against fixed prescriptive R-values alone. Technical requirements:</p>
+  <ul>
+    <li>Thermal envelope: total UA at or below 100% of 2021 IECC Reference Home UA for Climate Zone 3A</li>
+    <li>Pre-drywall inspection: ENERGY STAR Thermal Bypass Inspection Checklist completed by an EPA-recognized third-party verifier</li>
+    <li>HVAC commissioning: HVAC System Quality Installation Checklist completed at startup</li>
+    <li>Lighting: 100% LED</li>
+    <li>Equipment: ENERGY STAR certified HVAC, water heater, and bath fans</li>
+    <li>Windows: ENERGY STAR certification confirmed per NFRC label (see Section 8 — Window Performance; confirm with Andersen)</li>
+  </ul>
+  <p>ENERGY STAR v3.2 is a required prerequisite for DOE Efficient New Homes. NC has not mandated v3.2 statewide. ENERGY STAR v3.3 has been finalized but will only become required as states adopt the 2024 IECC or equivalent; earliest mandatory dates are no sooner than 2027–2028 depending on jurisdiction and federal 45L tax credit timelines.</p>
+
+  <h3>DOE Efficient New Homes V2 Rev.3 (issued 9/15/2025; updated 3/16/2026)</h3>
+  <p>DOE ENH V2 Rev.3 requires ENERGY STAR v3.2 as a prerequisite, plus the following additional requirements:</p>
+  <ul>
+    <li>All ducts and air handlers inside the thermal and air barrier boundary — required. This is the limiting factor on this project (see Section 3).</li>
+    <li>Envelope air leakage: ≤ 2.25 ACH50 for Climate Zone 3 detached single-family</li>
+    <li>HVAC: ≥ 15.2 SEER2 / ≥ 7.8 HSPF2 heat pump efficiency — confirm from Innovair AHRI-certified data (see Section 9)</li>
+    <li>Water heater: UEF ≥ 2.57 — Bosch TR7000-T (UEF 4.0) meets this requirement</li>
+    <li>Lighting: 100% LED</li>
+    <li>EV-ready: one parking space with 240V/30A receptacle and dedicated labeled circuit in garage</li>
+    <li>Indoor airPLUS: EPA Indoor airPLUS V1 Rev. 04 or V2 required as a prerequisite</li>
+  </ul>
+  <p>Using DOE ENH as a performance benchmark, the second-floor duct location is the single item that does not currently meet the standard. All other systems meet or closely approach DOE V2 Rev.3 targets. Confirm HSPF2 from Innovair AHRI-certified data to verify whether the units meet the DOE ENH heating efficiency benchmark.</p>
+
+  <div class="ref-list">
+    <p><a href="https://codes.iccsafe.org/content/NCECC2018/appendix-r4-additional-voluntary-criteria-for-increasing-energy-efficiency-high-efficiency-residential-option-" target="_blank">2018 NCECC Appendix R4 — HERO Requirements</a></p>
+    <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR Certified Homes — Builder Resources</a></p>
+    <p><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ─── Appendix A ─── -->
+<section class="section" id="appendix-a">
+  <p class="appendix-label">Appendix A</p>
+  <h2>NC Code &amp; Above-Code Program Requirements</h2>
+  <p>The table below summarizes the three above-code programs applicable to this project alongside the NC Code minimum. Data is current as of April 2026. Requirements are for Climate Zone 3A (Harnett County, NC).</p>
+  <div class="callout info">
+    <p><strong>Code status note:</strong> The 2018 NCECC is still the operative code in North Carolina as of April 2026. The 2024 NC Energy Conservation Code was finalized on March 24, 2025, and is awaiting adoption. Its effective date is contingent on the State Fire Marshal certifying two conditions under S.L. 2025-2 and will be no sooner than 12 months after that certification. No effective date has been announced as of April 2026. Projects permitted under 2026 plans are correctly designed to the 2018 NCECC. However, where DOE Efficient New Homes or ENERGY STAR v3.2 are used as performance benchmarks, those programs reference 2021 IECC performance targets regardless of the local code status.</p>
+  </div>
+  <div class="scroll-top-bar" id="scrollTopBar"><div class="scroll-top-bar-inner" id="scrollTopBarInner"></div></div>
+  <div class="table-wrap" id="complianceTableWrap">
+    <table class="compliance-table">
+      <thead>
+        <tr>
+          <th>Specification</th>
+          <th>NC Code Min.</th>
+          <th>Duke HERO</th>
+          <th>ENERGY STAR v3.2 *</th>
+          <th>DOE Efficient New Homes V2 †</th>
+          <th>This Project</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">Envelope Air Leakage</td>
+          <td>≤ 5.0 ACH50</td>
+          <td>≤ 4.0 ACH50 or 0.24 CFM50/SF</td>
+          <td>≤ 3.0 ACH50 (per 2021 IECC)</td>
+          <td>≤ 2.25 ACH50 (CZ 3–4 detached)</td>
+          <td>Target: 2.0 ACH50</td>
+        </tr>
+        <tr>
+          <td class="label">Exterior Wall Framing</td>
+          <td>2×4 or 2×6</td>
+          <td>2×6 required</td>
+          <td>Recommended; thermal bypass checklist applies</td>
+          <td>2021 IECC prescriptive</td>
+          <td><span class="pill-pass">✓ 2×6 both floors</span></td>
+        </tr>
+        <tr>
+          <td class="label">Exterior Wall R-Value</td>
+          <td>R-15 cavity or R-13+R-2.5 c.i.</td>
+          <td>R-21 high-density</td>
+          <td>R-15 cavity or R-13+R-2.5 ci (CZ 3A)</td>
+          <td>2021 IECC prescriptive</td>
+          <td><span class="pill-pass">✓ R-21 HD planned</span></td>
+        </tr>
+        <tr>
+          <td class="label">Ceiling / Attic Floor</td>
+          <td>R-38 (CZ3A) ‡</td>
+          <td>R-49+</td>
+          <td>R-38 (or meet Total UA) (CZ 3A)</td>
+          <td>R-49+ (2021 IECC)</td>
+          <td>R-49 recommended ‡</td>
+        </tr>
+        <tr>
+          <td class="label">Floor over Crawl Space</td>
+          <td>R-13 min. (CZ3A)</td>
+          <td>Per Appendix R4</td>
+          <td>Per Reference Home UA</td>
+          <td>Per 2021 IECC</td>
+          <td>Confirm insulation spec</td>
+        </tr>
+        <tr>
+          <td class="label">Slab Perimeter (conditioned)</td>
+          <td>Not required (unheated CZ3A)</td>
+          <td>R-10 recommended</td>
+          <td>Per Reference Home UA</td>
+          <td>Per 2021 IECC</td>
+          <td>R-10 recommended (see §7)</td>
+        </tr>
+        <tr>
+          <td class="label">Window U-Factor</td>
+          <td>≤ 0.35 (CZ3A)</td>
+          <td>≤ 0.30</td>
+          <td>≤ 0.30 (CZ3)</td>
+          <td>≤ 0.30</td>
+          <td><span class="pill-pass">✓ U-0.26 / 0.27</span></td>
+        </tr>
+        <tr>
+          <td class="label">Window SHGC</td>
+          <td>≤ 0.25</td>
+          <td>≤ 0.25</td>
+          <td>≤ 0.25 (CZ3)</td>
+          <td>≤ 0.25</td>
+          <td><span class="pill-pass">✓ SHGC 0.19–0.22</span></td>
+        </tr>
+        <tr>
+          <td class="label">Duct Leakage (total)</td>
+          <td>≤ 5 CFM25/100 SF</td>
+          <td>≤ 4 CFM25/100 SF</td>
+          <td>≤ 4 CFM25/100 SF</td>
+          <td>≤ 4 CFM25/100 SF (post-test req.)</td>
+          <td>Target: ≤ 4, test reqd.</td>
+        </tr>
+        <tr>
+          <td class="label">Duct Leakage (to outside)</td>
+          <td>≤ 4 CFM25/100 SF</td>
+          <td>≤ 3 CFM25/100 SF</td>
+          <td>≤ 4 CFM25/100 SF</td>
+          <td>All ducts inside conditioned env. — test still required†</td>
+          <td><span class="pill-warn">⚠ 2nd floor in vented attic</span></td>
+        </tr>
+        <tr>
+          <td class="label">Duct Location</td>
+          <td>Any</td>
+          <td>Inside conditioned preferred</td>
+          <td>Inside conditioned boundary</td>
+          <td>All ducts inside thermal/air barrier — required</td>
+          <td><span class="pill-warn">⚠ 2nd floor in vented attic</span></td>
+        </tr>
+        <tr>
+          <td class="label">Duct Insulation (uncond. space)</td>
+          <td>R-8 supply/return (NC amdt)</td>
+          <td>R-8 supply/return</td>
+          <td>R-8 supply/return</td>
+          <td>N/A (ducts must be inside cond. env.)</td>
+          <td><span class="pill-warn">⚠ 2nd floor attic ducts need R-8</span></td>
+        </tr>
+        <tr>
+          <td class="label">HVAC Efficiency (heat pump)</td>
+          <td>≥ 15.2 SEER2 / 7.8 HSPF2 (SE region)</td>
+          <td>Base code min. (App. R4 does not modify HVAC eff.)</td>
+          <td>ENERGY STAR rated</td>
+          <td>≥ 15.2 SEER2 / ≥ 7.8 HSPF2</td>
+          <td><span class="pill-tbd">✓ SEER2; ⚠ confirm HSPF2</span></td>
+        </tr>
+        <tr>
+          <td class="label">Water Heater (electric)</td>
+          <td>Any compliant</td>
+          <td>ENERGY STAR compliant</td>
+          <td>ENERGY STAR certified</td>
+          <td>UEF ≥ 2.57</td>
+          <td><span class="pill-pass">✓ Bosch TR7000-T UEF 4.0</span></td>
+        </tr>
+        <tr>
+          <td class="label">Lighting</td>
+          <td>75% high-efficacy</td>
+          <td>≥ 90% high-efficacy (§R404.1)</td>
+          <td>100% LED</td>
+          <td>100% LED</td>
+          <td><span class="pill-pass">✓ Specify 100% LED</span></td>
+        </tr>
+        <tr>
+          <td class="label">Mechanical Ventilation</td>
+          <td>Required per ASHRAE 62.2</td>
+          <td>Required</td>
+          <td>ERV/HRV recommended</td>
+          <td>Required + ERV/HRV</td>
+          <td><span class="pill-pass">✓ Panasonic ERV</span></td>
+        </tr>
+        <tr>
+          <td class="label">Crawl Space</td>
+          <td>Code minimum</td>
+          <td>Fully encapsulated</td>
+          <td>Per moisture management</td>
+          <td>Per DOE moisture requirements</td>
+          <td><span class="pill-pass">✓ Encapsulation planned</span></td>
+        </tr>
+        <tr>
+          <td class="label">EV-Ready</td>
+          <td>Not required</td>
+          <td>Not required</td>
+          <td>Not required</td>
+          <td>Required (240V/30A)</td>
+          <td>Install at rough-in</td>
+        </tr>
+        <tr>
+          <td class="label">Indoor Air Quality</td>
+          <td>Not required</td>
+          <td>Not required</td>
+          <td>Not required</td>
+          <td>EPA Indoor airPLUS V1 Rev.04 (or V2) req.</td>
+          <td>Radon rough-in needed</td>
+        </tr>
+        <tr>
+          <td class="label">Third-Party Verification</td>
+          <td>Code inspection only</td>
+          <td>Accredited third-party verifier required</td>
+          <td>EPA-recognized third-party verifier</td>
+          <td>EPA-recognized third-party verifier</td>
+          <td>Required for HERO+</td>
+        </tr>
+        <tr>
+          <td class="label">Current Program Version</td>
+          <td>2018 NCECC (operative)</td>
+          <td>Duke HERO current</td>
+          <td>ENERGY STAR v3.2 *</td>
+          <td>DOE ENH V2 Rev.3 (9/15/2025; upd. 3/16/2026)</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p>* ENERGY STAR v3.2 applies nationally. NC has not yet mandated v3.2 statewide, but it is required as a prerequisite for DOE Efficient New Homes certification. ENERGY STAR v3.3 has been finalized but will only become required as states adopt the 2024 IECC or equivalent; earliest mandatory dates are no sooner than 2027–2028 depending on jurisdiction.</p>
+    <p>† DOE Efficient New Homes (formerly Zero Energy Ready Home / ZERH) requires all ductwork to be inside the conditioned envelope, so leakage to outside is minimized by design. A post-construction duct leakage test is still required to verify compliance with total leakage limits.</p>
+    <p>‡ Ceiling / Attic Floor R-value note: R-38 is the 2018 NCECC CZ3A prescriptive minimum for attic floor insulation. R-30 is permitted as an alternative only when the full R-30 depth is maintained from the center of the attic to the outside edge of the exterior wall top plate (i.e., the insulation is full-height and uncompressed at the eave). R-20 applies only to spray foam applied directly at the roof deck in a conditioned attic assembly (Option A). For this project with stick-framed 2×8 rafters at 16″ O.C., the attic floor approach requires R-38 minimum or R-49 for above-code compliance. Full depth at the eave requires raised-heel construction (see L2-C).</p>
+  </div>
+  <div class="ref-list">
+    <p><a href="https://codes.iccsafe.org/content/NCECC2018P2" target="_blank">2018 NC Energy Conservation Code (NCECC)</a></p>
+    <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR Certified Homes — Builder Resources</a></p>
+    <p><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></p>
+  </div>
+</section>
+
+<!-- ─── Appendix B ─── -->
+<section class="section" id="appendix-b">
+  <p class="appendix-label">Appendix B</p>
+  <h2>ENERGY STAR Checklists Overview</h2>
+  <p>ENERGY STAR Certified Homes v3.2 includes two field-verified checklists, completed by a third-party verifier during construction. These checklists are valuable as a construction quality framework regardless of whether formal ENERGY STAR certification is pursued — they identify the specific field conditions that most commonly lead to performance problems, callbacks, and comfort complaints in newly built homes. Using them as a reference costs nothing and catches issues at the stage when they are cheapest to correct.</p>
+
+  <h3>Thermal Bypass Inspection Checklist</h3>
+  <p>The ENERGY STAR Thermal Bypass Inspection Checklist identifies specific locations where air movement and thermal bridging can bypass the intended insulation and air barrier system. It is performed at the pre-drywall stage by a qualified third-party inspector. Note: ENERGY STAR Section 3 no longer requires advanced framing as a mandatory item — advanced framing is now a highly recommended best practice that directly addresses multiple checklist locations. ANSI/RESNET/ICC 301 insulation installation Grade I is the quality standard underlying these requirements. Key checklist items relevant to this project:</p>
+  <ul>
+    <li>Attic kneewalls (if present): rigid air barrier on attic side, insulation on attic side</li>
+    <li>Attic hatches and access doors: insulated and gasketed to full attic R-value</li>
+    <li>Dropped ceilings and soffits: rigid air barrier installed on top before insulation is placed</li>
+    <li>Exterior walls: air barrier at all penetrations, no gaps at window/door rough openings, rim/band joist sealed and insulated</li>
+    <li>Cantilevered floors: insulation immediately below floor sheathing, air barrier on all exposed sides</li>
+  </ul>
+  <div class="ref-list">
+    <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR — New Homes Partner Resources (checklists available here)</a></p>
+  </div>
+
+  <h3>HVAC System Quality Installation — Commissioning Checklist</h3>
+  <p>ENERGY STAR requires HVAC systems to be verified at startup using the HVAC System Quality Installation — Contractor Checklist. This checklist confirms that installed systems match the design intent for airflow, refrigerant charge, and distribution. Key items relevant to this project:</p>
+  <ul>
+    <li>Equipment sizing confirmed against Manual J load calculation</li>
+    <li>Duct leakage test completed and results recorded</li>
+    <li>Refrigerant charge verified (measured superheat or subcooling per manufacturer specification)</li>
+    <li>Total external static pressure measured and within equipment rating</li>
+    <li>Supply and return airflow measured at each register for both ducted systems</li>
+    <li>ERV installed and airflow balanced per design</li>
+    <li>Bath exhaust fan airflow verified (minimum 50 CFM intermittent or 20 CFM continuous per ASHRAE 62.2)</li>
+  </ul>
+  <div class="ref-list">
+    <p><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR — New Homes Partner Resources (HVAC checklists available here)</a></p>
+  </div>
+</section>
+
+<!-- ─── Appendix C ─── -->
+<section class="section" id="appendix-c">
+  <p class="appendix-label">Appendix C</p>
+  <h2>Advanced Framing — Reference Resources</h2>
+  <p>Advanced framing (Optimum Value Engineering, or OVE) reduces structural lumber in exterior walls while maintaining structural performance. The result is less thermal bridging, more insulated wall area, and in most cases a modest reduction in lumber cost. Techniques are well-established and documented by multiple research programs.</p>
+  <div class="callout">
+    <p>ENERGY STAR no longer mandates advanced framing under Section 3 of its Certified Homes requirements. Advanced framing is strongly recommended by ENERGY STAR, supported by ANSI/RESNET/ICC 301 (insulation installation quality grades), and is the most effective method for achieving Grade I insulation installation at corners, headers, and partition intersections.</p>
+  </div>
+
+  <h3><a href="https://www.energy.gov/energysaver/advanced-house-framing" target="_blank">DOE — Advanced House Framing Overview</a></h3>
+  <p>The U.S. Department of Energy's primary page on advanced framing. Covers 2×6 @ 24″ O.C., single top plates, two-stud corners, and insulated headers with supporting energy savings data.<br><em><a href="https://www.energy.gov/energysaver/advanced-house-framing" target="_blank">https://www.energy.gov/energysaver/advanced-house-framing</a></em></p>
+
+  <h3><a href="https://www.buildingscience.com" target="_blank">Building Science Corporation — Advanced Framing Resources</a></h3>
+  <p>Building Science Corporation publishes BSI-030 and related technical articles by Joe Lstiburek covering thermal bridge calculations and performance comparisons between standard and advanced framing assemblies. Search 'advanced framing' or 'BSI-030' at buildingscience.com.<br><em><a href="https://www.buildingscience.com" target="_blank">https://www.buildingscience.com</a></em></p>
+
+  <h3><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">ENERGY STAR — New Homes Partner Resources and Thermal Bypass Checklist</a></h3>
+  <p>The field checklist used by ENERGY STAR raters to verify that framing, air barriers, and insulation are correctly installed at all bypass-prone locations. Advanced framing techniques address the corner, header, and partition intersection items directly.<br><em><a href="https://www.energystar.gov/partner-resources/residential-new/national-page" target="_blank">https://www.energystar.gov/partner-resources/residential-new/national-page</a></em></p>
+
+  <h3><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">DOE Efficient New Homes Program Requirements</a></h3>
+  <p>Full program requirements document for DOE Efficient New Homes (formerly Zero Energy Ready Home / ZERH). Includes duct location, IAQ, EV-ready, PV-ready, and Indoor airPLUS requirements. Confirm against the most current version as DOE updates these on a rolling basis.<br><em><a href="https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements" target="_blank">https://www.energy.gov/eere/buildings/doe-efficient-new-homes-program-requirements</a></em></p>
+
+  <h3><a href="https://www.nrel.gov/docs/fy01osti/26449.pdf" target="_blank">NREL — Optimum Value Engineering (OVE) Framing</a></h3>
+  <p>NREL technical reference on OVE framing energy savings and construction techniques, including cost-benefit analysis and regional applicability data.<br><em><a href="https://www.nrel.gov/docs/fy01osti/26449.pdf" target="_blank">https://www.nrel.gov/docs/fy01osti/26449.pdf</a></em></p>
+</section>
+
+</main>
+
+<!-- ─── Footer ─── -->
+<footer style="background:#003876; color:#f5c06a; padding:24px 60px; font-family:'Montserrat','Segoe UI',system-ui,sans-serif; font-size:.78rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:48px;">
+  <span>Peak Energy, Inc. &nbsp;·&nbsp; peakenergync.com &nbsp;·&nbsp; (919) 567-5329</span>
+  <span>Energy-Efficiency Plan Review &nbsp;·&nbsp; 3182 Stephenson Road &nbsp;·&nbsp; April 2026</span>
+</footer>
+
+</div>
+<script>
+(function(){
+  var topBar = document.getElementById('scrollTopBar');
+  var inner = document.getElementById('scrollTopBarInner');
+  var wrap = document.getElementById('complianceTableWrap');
+  if (!topBar || !wrap || !inner) return;
+  function syncWidth() {
+    var table = wrap.querySelector('table');
+    var w = table ? table.offsetWidth : wrap.scrollWidth;
+    inner.style.width = w + 'px';
+  }
+  window.addEventListener('load', syncWidth);
+  window.addEventListener('resize', syncWidth);
+  setTimeout(syncWidth, 100);
+  setTimeout(syncWidth, 500);
+  var syncing = false;
+  topBar.addEventListener('scroll', function(){ if(!syncing){ syncing=true; wrap.scrollLeft=topBar.scrollLeft; syncing=false; }});
+  wrap.addEventListener('scroll', function(){ if(!syncing){ syncing=true; topBar.scrollLeft=wrap.scrollLeft; syncing=false; }});
+})();
+</script>
+</body>
+</html>
